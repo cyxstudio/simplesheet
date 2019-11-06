@@ -1,5 +1,10 @@
 <div id="sheet"></div>
 
+<script
+  src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+  crossorigin="anonymous"></script>
+  
 <script>
 
 var rows = 10;
@@ -40,8 +45,16 @@ table.append(tbody)
 document.getElementById("sheet").append(table)
 
 
+$("tbody td").bind( "click", function() {
+    $("tbody td").removeClass("selected");
+    $("tbody td").addClass("normal");
+	this.className = "selected";
+});
 
 
+$("tbody td").bind( "dblclick", function() {
+	
+});
 
 </script>
 
@@ -49,10 +62,12 @@ document.getElementById("sheet").append(table)
 
 td {
 	text-align:center;
-
+    background-color:none;
 }
 
-
+.selected {
+	background-color:red;
+}
 
 
 </style>
