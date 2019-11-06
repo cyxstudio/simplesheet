@@ -1,0 +1,58 @@
+<div id="sheet"></div>
+
+<script>
+
+var rows = 10;
+var columnHeader = ["folder","page","MR1"];
+var columnType = [];
+var columnData = ["","",""];
+var columnWidth = [100,100,100];
+var table = document.createElement("table")
+table.border = "solid 1px black"
+
+var thead = document.createElement("thead")
+var theadtr = document.createElement("tr")
+
+for (var i = 0; i < columnHeader.length; i++) {
+	theadtr.innerHTML = theadtr.innerHTML + "<td height = '25px'width = '" + columnWidth[i] + "'>"  +       	columnHeader[i] + "</td>";
+}
+
+var tbody = document.createElement("tbody")
+var tr = document.createElement("tr")
+
+for (var i = 0; i < rows; i++) {
+
+	var tr = document.createElement("tr")
+    
+	for (var o = 0; o < columnHeader.length; o++) {
+    	var td = document.createElement("td")
+        td.height="25px";
+        td.contentEditable = true;
+        tr.append(td)
+    }
+    tbody.append(tr)
+}
+
+
+thead.append(theadtr)
+table.append(thead)
+table.append(tbody)
+document.getElementById("sheet").append(table)
+
+
+
+
+
+</script>
+
+<style>
+
+td {
+	text-align:center;
+
+}
+
+
+
+
+</style>
